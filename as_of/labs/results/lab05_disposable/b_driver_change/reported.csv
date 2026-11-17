@@ -1,0 +1,4 @@
+report_id,ticker,metric,period,unit,reported_value,reported_at,table,amendment_state,source_id,retrieved_at
+R001,SYN_T01,eps,2026Q3,usd_per_share,1.27,2026-10-20T20:00:00Z,SYN_TABLE_SUMMARY,original,SYN_SRC_FILING_01,2026-10-27T09:00:00Z
+R002,SYN_T01,revenue,2026Q3,usd_millions,512.0,2026-10-20T20:00:00Z,SYN_TABLE_SUMMARY,original,SYN_SRC_FILING_01,2026-10-27T09:00:00Z
+R003,SYN_T01,gross_margin,2026Q3,percent,41.2,2026-10-20T20:00:00Z,SYN_TABLE_SUMMARY,original,SYN_SRC_FILING_01,2026-10-27T09:00:00Z

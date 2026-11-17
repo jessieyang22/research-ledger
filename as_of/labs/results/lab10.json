@@ -1,0 +1,353 @@
+{
+  "automated_checks": [
+    {
+      "check_id": "c10.contract.mode_manual",
+      "detail": "mode='Manual'",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.paused_until_proof",
+      "detail": "paused=True",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.allowed_writes_queue_only",
+      "detail": "allowed_writes=['as_of/labs/results/lab10_queue']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.writes_inside_as_of",
+      "detail": "every allowed write is a relative path under as_of/ with no '..'",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.tools_limited",
+      "detail": "allowed_tools=['verifier', 'queue_write']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.outcome_labels",
+      "detail": "outcome_labels={'failure': 'FAILED', 'success': 'REVIEW_REQUIRED'}",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.failure_conditions",
+      "detail": "failure_conditions=['late', 'overlapping', 'partial_input']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.instructions_name_rules",
+      "detail": "missing phrases: []",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.folder_is_sample",
+      "detail": "folder='as_of/labs/data/lab10_sample_folder'",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.schedule_matches_lab_expectation",
+      "detail": "schedule={'business_days_only': True, 'cadence': 'daily', 'due_time': '16:05', 'grace_minutes': 10, 'name': 'lab10_daily_close'}",
+      "passed": true
+    },
+    {
+      "check_id": "c10.contract.schedule_expands",
+      "detail": "window runs=['2026-10-19T16:05:00', '2026-10-20T16:05:00', '2026-10-21T16:05:00', '2026-10-22T16:05:00', '2026-10-23T16:05:00']; weekend runs=[]",
+      "passed": true
+    },
+    {
+      "check_id": "c10.inputs.required_present",
+      "detail": "missing inputs: []",
+      "passed": true
+    },
+    {
+      "check_id": "c10.checklist.ten_items",
+      "detail": "items=10",
+      "passed": true
+    },
+    {
+      "check_id": "c10.checklist.unique_ids",
+      "detail": "unique ids: 10 of 10",
+      "passed": true
+    },
+    {
+      "check_id": "c10.checklist.automated_items_checked",
+      "detail": "unchecked automated: []; unclassified: []",
+      "passed": true
+    },
+    {
+      "check_id": "c10.checklist.manual_items_open",
+      "detail": "manual items claimed checked: []; manual items without a known gate: []",
+      "passed": true
+    },
+    {
+      "check_id": "c10.handoff.validates",
+      "detail": "findings=6; failing: []",
+      "passed": true
+    },
+    {
+      "check_id": "c10.handoff.negative_control_fails",
+      "detail": "broken owner_role flagged: ['handoff.owner_role', 'handoff.digest']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.handoff.no_transcript_in_packet",
+      "detail": "transcript files in packet: []",
+      "passed": true
+    }
+  ],
+  "checklist_items_open_manual": [
+    "HC05",
+    "HC06",
+    "HC07",
+    "HC08",
+    "HC09",
+    "HC10"
+  ],
+  "checklist_path": "data/lab10_handoff_checklist.json",
+  "contract_path": "data/lab10_scheduled_task_contract.json",
+  "lab": "lab10",
+  "limits": [
+    "A PASS does not show that a local schedule fired on any machine. Only Run now and desktop task history can show that (PENDING_MANUAL).",
+    "The ten-item checklist is a local list written for this lab. Manual items stay open until their gate is recorded.",
+    "The desktop routine interface was not tested for this edition; no method is verified for it.",
+    "The routing rule is a lab-side model, not the desktop routine's runtime behaviour. Route checks test that model on a synthetic history.",
+    "Overlap is computed from synthetic start and finish times, not from a real run log.",
+    "The synthetic history is in UTC. The contract schedule is naive local time; the lab treats it as UTC only for the history probes."
+  ],
+  "manual_gates": [
+    {
+      "detail": "Create a local routine in the desktop app, paste the task name and instructions, choose Manual, select the sample folder, save. Not done by this lab.",
+      "gate_id": "desk.routine_created_manual",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Run now, inspect every permission request, allow only the verifier and the queue-only output. Not done by this lab.",
+      "gate_id": "desk.run_now_permissions",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Check run history for actual time, folder, completion state, output and any stall. Not done by this lab.",
+      "gate_id": "desk.run_history",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Confirm a real clean run writes REVIEW_REQUIRED. Not done by this lab.",
+      "gate_id": "desk.clean_run_review_required",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Confirm real late, overlapping and partial-input runs write FAILED. Not done by this lab.",
+      "gate_id": "desk.failure_runs_failed",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Leave the task paused unless the proof succeeds. Depends on the proof results above.",
+      "gate_id": "desk.left_paused_unless_proof",
+      "status": "PENDING_MANUAL"
+    },
+    {
+      "detail": "Second analyst gets the folder and checklist, not the transcript, reruns the full verifier, rebuilds the packet, compares hashes and records discrepancies. Not done by this lab.",
+      "gate_id": "handoff.second_analyst_rerun",
+      "status": "PENDING_MANUAL"
+    }
+  ],
+  "packet_hashes": {
+    "data/lab10_handoff_checklist.json": "d4fb90418e23e7a433e2db2730a9b0a29271f11dd82b6ebe265ffd6d469876a4",
+    "data/lab10_sample_folder/synthetic_positions.csv": "672a3b349dc973348608203eb97b855aa0b60071e5c768e46a765e6ade42e9e9",
+    "data/lab10_sample_folder/synthetic_prices.csv": "121fbe364fb324fcefeea476a5ee8920c582877c7c36ecb60c592d91565a505b",
+    "data/lab10_scheduled_task_contract.json": "2f1cf4f070482e7a1c1e05d821b7dad789b01a2bc3f807687e38d23f164a22b3"
+  },
+  "planted_checks": [
+    {
+      "description": "allowed_writes widened to the whole as_of folder in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.contract.allowed_writes_queue_only",
+        "c10.contract.writes_inside_as_of"
+      ],
+      "failing_checks": [
+        "c10.contract.allowed_writes_queue_only",
+        "c10.contract.writes_inside_as_of"
+      ],
+      "planted_id": "A_widened_allowed_writes"
+    },
+    {
+      "description": "manual item HC07 marked checked without a recorded desktop run",
+      "detected": true,
+      "expected_failing": [
+        "c10.checklist.manual_items_open"
+      ],
+      "failing_checks": [
+        "c10.checklist.manual_items_open"
+      ],
+      "planted_id": "B_manual_item_self_claimed"
+    },
+    {
+      "description": "due time moved from 16:05 to 16:15 in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.contract.schedule_matches_lab_expectation",
+        "c10.contract.schedule_expands"
+      ],
+      "failing_checks": [
+        "c10.contract.schedule_matches_lab_expectation",
+        "c10.contract.schedule_expands"
+      ],
+      "planted_id": "C_due_time_moved"
+    },
+    {
+      "description": "business_days_only set to False in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.contract.schedule_matches_lab_expectation",
+        "c10.contract.schedule_expands"
+      ],
+      "failing_checks": [
+        "c10.contract.schedule_matches_lab_expectation",
+        "c10.contract.schedule_expands"
+      ],
+      "planted_id": "D_weekend_rule_dropped"
+    },
+    {
+      "description": "paused set to False in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.contract.paused_until_proof"
+      ],
+      "failing_checks": [
+        "c10.contract.paused_until_proof"
+      ],
+      "planted_id": "E_task_unpaused"
+    },
+    {
+      "description": "automated item HC02 unchecked in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.checklist.automated_items_checked"
+      ],
+      "failing_checks": [
+        "c10.checklist.automated_items_checked"
+      ],
+      "planted_id": "F_automated_item_unchecked"
+    },
+    {
+      "description": "disposable copy of the sample folder with synthetic_prices.csv removed",
+      "detected": true,
+      "expected_failing": [
+        "c10.inputs.required_present"
+      ],
+      "failing_checks": [
+        "c10.inputs.required_present"
+      ],
+      "planted_id": "G_required_input_missing"
+    },
+    {
+      "description": "allowed_tools widened with a network_fetch tool in a disposable copy",
+      "detected": true,
+      "expected_failing": [
+        "c10.contract.tools_limited"
+      ],
+      "failing_checks": [
+        "c10.contract.tools_limited"
+      ],
+      "planted_id": "H_widened_allowed_tools"
+    }
+  ],
+  "routing_checks": [
+    {
+      "check_id": "c10.timeliness.scenario_statuses",
+      "detail": "statuses=['ON_TIME', 'LATE', 'MISSED', 'ON_TIME', 'ON_TIME']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.timeliness.grace_boundary_inclusive",
+      "detail": "at edge=ON_TIME, one minute past=LATE",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.scenario_routes_from_history",
+      "detail": "routes=['REVIEW_REQUIRED', 'FAILED', 'FAILED', 'REVIEW_REQUIRED', 'REVIEW_REQUIRED']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.scenario_has_no_overlap_or_partial",
+      "detail": "overlapping=[False, False, False, False, False] partial_input=False",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.overlap_probe_failed",
+      "detail": "overlapping=[False, True] routes=['REVIEW_REQUIRED', 'FAILED']",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.partial_input_failed",
+      "detail": "absent inputs=['synthetic_absent_input.csv'] route=FAILED",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.clean_on_time_review_required",
+      "detail": "clean on-time run",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.late_failed",
+      "detail": "late run",
+      "passed": true
+    },
+    {
+      "check_id": "c10.route.missed_failed",
+      "detail": "missed run",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "all_automated_passed": true,
+    "all_planted_detected": true,
+    "automated_passed": 28,
+    "automated_total": 28,
+    "lab_status": "PASS",
+    "manual_gates_pending": [
+      "desk.routine_created_manual",
+      "desk.run_now_permissions",
+      "desk.run_history",
+      "desk.clean_run_review_required",
+      "desk.failure_runs_failed",
+      "desk.left_paused_unless_proof",
+      "handoff.second_analyst_rerun"
+    ],
+    "note": "Lab PASS is not a proof that the desktop routine ran. Manual gates remain open."
+  },
+  "timeliness_scenario": {
+    "overlapping": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "partial_input": false,
+    "routes": [
+      "REVIEW_REQUIRED",
+      "FAILED",
+      "FAILED",
+      "REVIEW_REQUIRED",
+      "REVIEW_REQUIRED"
+    ],
+    "slots": [
+      "2026-10-19T16:05:00+00:00",
+      "2026-10-20T16:05:00+00:00",
+      "2026-10-21T16:05:00+00:00",
+      "2026-10-22T16:05:00+00:00",
+      "2026-10-23T16:05:00+00:00"
+    ],
+    "statuses": [
+      "ON_TIME",
+      "LATE",
+      "MISSED",
+      "ON_TIME",
+      "ON_TIME"
+    ]
+  },
+  "title": "Saved scheduled-task contract and transcript-free handoff"
+}

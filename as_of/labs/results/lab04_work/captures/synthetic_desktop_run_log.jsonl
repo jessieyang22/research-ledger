@@ -1,0 +1,4 @@
+{"decision": "prompted", "event": "permission_request", "scope": "read:as_of/labs"}
+{"decision": "prompted", "event": "permission_request", "scope": "write:as_of/labs/results"}
+{"decision": "prompted", "event": "permission_request", "scope": "write:/"}
+{"event": "run_summary", "output": "queue_only_ok"}

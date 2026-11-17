@@ -1,0 +1,163 @@
+{
+  "cutoff_utc": "2026-06-30T12:00:00Z",
+  "data": "synthetic only (series SYN_LAB_CPI)",
+  "input_file": "data/lab06_macro_vintages.csv",
+  "input_sha256": "092afe4440af107456470fcf5c0fda2e1ffb1e863804a90f68924be03e96b0ea",
+  "lab": "lab06",
+  "manual_gates": [
+    {
+      "detail": "unit, seasonal adjustment, source and retrieval time present on every row",
+      "gate_id": "manual_metadata_gate",
+      "human_signoff": "PENDING",
+      "passed": true
+    },
+    {
+      "detail": "not run: no network in this lab. Check the official series page for series ID, units, seasonal adjustment and historical coverage, and the vintage history for the release times of each value.",
+      "gate_id": "official_series_page_check",
+      "passed": null,
+      "status": "PENDING_MANUAL"
+    }
+  ],
+  "notes": [
+    "Output rows carry the as-of column (as_of_value) and the latest column (latest_value) separately.",
+    "The planted disposable output and the planted unit-stripped manifest exist only in memory.",
+    "The official series page, its units, adjustment and vintage history were not checked here.",
+    "A PASS shows agreement with the synthetic vintages and the cutoff rule only."
+  ],
+  "numeric_checks": [
+    {
+      "check_id": "repeat_selection_every_observation",
+      "detail": "rows=5; problems=none",
+      "passed": true
+    },
+    {
+      "check_id": "no_as_of_row_exceeds_cutoff",
+      "detail": "cutoff=2026-06-30T12:00:00Z; violations=none",
+      "passed": true
+    },
+    {
+      "check_id": "latest_column_is_newest_vintage",
+      "detail": "problems=none",
+      "passed": true
+    },
+    {
+      "check_id": "april_as_of_june5_latest_july3",
+      "detail": "as_of=2026-06-05/2.66 latest=2026-07-03/2.71",
+      "passed": true
+    },
+    {
+      "check_id": "no_pre_cutoff_history_returns_unavailable",
+      "detail": "August row status=UNAVAILABLE_AS_OF_CUTOFF as_of_value=None",
+      "passed": true
+    },
+    {
+      "check_id": "golden_as_of_table_matches_hand_picks",
+      "detail": "differences=none",
+      "passed": true
+    },
+    {
+      "check_id": "conservative_release_is_2359_59_on_vintage_day",
+      "detail": "conservative_release(2026-06-30) must be 23:59:59Z",
+      "passed": true
+    },
+    {
+      "check_id": "cutoff_day_vintage_excluded_day_before_kept",
+      "detail": "picked=('2026-06-29', 1.0); select_as_of=2026-06-29",
+      "passed": true
+    }
+  ],
+  "output_rows": [
+    {
+      "as_of_value": 2.38,
+      "as_of_vintage_date": "2026-04-07",
+      "latest_value": 2.35,
+      "latest_vintage_date": "2026-07-08",
+      "obs_date": "2026-02-01",
+      "retrieved_at": "2026-10-27T00:00:00Z",
+      "seasonal_adjustment": "SA (synthetic)",
+      "series_id": "SYN_LAB_CPI",
+      "source_id": "SYN_LAB_SRC",
+      "status": "OK",
+      "unit": "index points (synthetic)"
+    },
+    {
+      "as_of_value": 2.49,
+      "as_of_vintage_date": "2026-05-06",
+      "latest_value": 2.49,
+      "latest_vintage_date": "2026-05-06",
+      "obs_date": "2026-03-01",
+      "retrieved_at": "2026-10-27T00:00:00Z",
+      "seasonal_adjustment": "SA (synthetic)",
+      "series_id": "SYN_LAB_CPI",
+      "source_id": "SYN_LAB_SRC",
+      "status": "OK",
+      "unit": "index points (synthetic)"
+    },
+    {
+      "as_of_value": 2.66,
+      "as_of_vintage_date": "2026-06-05",
+      "latest_value": 2.71,
+      "latest_vintage_date": "2026-07-03",
+      "obs_date": "2026-04-01",
+      "retrieved_at": "2026-10-27T00:00:00Z",
+      "seasonal_adjustment": "SA (synthetic)",
+      "series_id": "SYN_LAB_CPI",
+      "source_id": "SYN_LAB_SRC",
+      "status": "OK",
+      "unit": "index points (synthetic)"
+    },
+    {
+      "as_of_value": 2.74,
+      "as_of_vintage_date": "2026-06-10",
+      "latest_value": 2.78,
+      "latest_vintage_date": "2026-08-07",
+      "obs_date": "2026-05-01",
+      "retrieved_at": "2026-10-27T00:00:00Z",
+      "seasonal_adjustment": "SA (synthetic)",
+      "series_id": "SYN_LAB_CPI",
+      "source_id": "SYN_LAB_SRC",
+      "status": "OK",
+      "unit": "index points (synthetic)"
+    },
+    {
+      "as_of_value": null,
+      "as_of_vintage_date": null,
+      "latest_value": 2.9,
+      "latest_vintage_date": "2026-09-08",
+      "obs_date": "2026-08-01",
+      "retrieved_at": "2026-10-27T00:00:00Z",
+      "seasonal_adjustment": "SA (synthetic)",
+      "series_id": "SYN_LAB_CPI",
+      "source_id": "SYN_LAB_SRC",
+      "status": "UNAVAILABLE_AS_OF_CUTOFF",
+      "unit": "index points (synthetic)"
+    }
+  ],
+  "planted_checks": [
+    {
+      "check_id": "planted_later_value_in_as_of_column_fails_validator",
+      "detail": "validator problems=2 kinds=['exceeds_cutoff', 'mismatch']; April mismatch flagged=True",
+      "detected": true,
+      "passed": true
+    },
+    {
+      "check_id": "planted_unit_removed_numeric_passes_manual_gate_fails",
+      "detail": "numeric checks still pass=True; manual metadata gate passed=False; missing=5",
+      "detected": true,
+      "passed": true
+    }
+  ],
+  "release_time_convention": "date-only vintage is released at 23:59:59Z on its vintage date; a release dated on the cutoff day does not count",
+  "summary": {
+    "all_numeric_passed": true,
+    "all_planted_detected": true,
+    "manual_gates_pending": [
+      "official_series_page_check"
+    ],
+    "numeric_checks_passed": 8,
+    "numeric_checks_total": 8,
+    "planted_detected": 2,
+    "planted_total": 2
+  },
+  "title": "Reconstruct a macro vintage"
+}

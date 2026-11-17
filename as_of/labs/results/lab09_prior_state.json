@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "catalyst": "b7327c95c8f97ecb98636f085cd481fd892cd34296657f000f84d9bca3851838",
+    "decision": "794ed44f830e1c5260739518e8d1ab50ac29c45c2f33b046d3267840d7ea4c05",
+    "earnings": "f0da6ca48633b08fca4e5a5677ffa6f379ee0d1eef0f09679dff2650c89653fc",
+    "exceptions": "46b5a8b8909a8018583bae3882718809618d8cfc10b2f142f9edefb38bff4cd1",
+    "macro": "f7a9761e7c0c972cc5376fd24bb672210d0131b21af9b5788d29bd0fb8f93d17",
+    "portfolio": "4d89d0c77641a4fc500e5e1805edd7aede61aefa22ecff89c955bfe9f52385fd",
+    "validation": "db92fa2a87003d7fd39976cc6b4a7a238e9c5c2bf0ea3709abb2e51dd5e4363f"
+  },
+  "sources": {
+    "SRC_LAB06_INPUT": "092afe4440af107456470fcf5c0fda2e1ffb1e863804a90f68924be03e96b0ea",
+    "SRC_LAB06_RESULT": "ebcea01c019ce9085445b01ecb09f35e05736be96896f25ee14affb31fd092f5",
+    "SRC_PROOF_CATALYST": "cefea41ecdc8dc3aef9fa85ca2a0e71274334889268996d95d54eef8c4107cf1",
+    "SRC_PROOF_EARNINGS": "7d13fe83ed124a45f5640cc480a58702cf8b9197567d30f830d1f07e1ddcd9fe",
+    "SRC_PROOF_MACRO": "9064d9651ca848e664b14838bdcad779c80bd24f990f5e2a0e71b1cbecc97c4c",
+    "SRC_PROOF_PM_PACKET": "e7244739588b6aff62c211c1e39d524daf4a29e8ffe25988b10ca4565af726fc",
+    "SRC_PROOF_PORTFOLIO": "c3d7f29935ed072656a952913beac6ec36933c56e038b3f3cb0e2576b8d978a2"
+  }
+}

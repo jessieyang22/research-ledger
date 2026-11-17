@@ -1,0 +1,38 @@
+[
+  {
+    "requirement_key": "approval_for_real_data",
+    "requirement": "Real data is used only after approval",
+    "layer": "information_governance",
+    "proof": "approval record naming the data owner"
+  },
+  {
+    "requirement_key": "prior_row_preservation",
+    "requirement": "Prior ledger rows are not rewritten",
+    "layer": "file_policy",
+    "proof": "comparison test against the prior snapshot"
+  },
+  {
+    "requirement_key": "lookahead_error",
+    "requirement": "No value uses information after its as-of point",
+    "layer": "validators",
+    "proof": "validator check on clock ordering and as-of cutoffs"
+  },
+  {
+    "requirement_key": "arithmetic_error",
+    "requirement": "Components reconcile to totals",
+    "layer": "validators",
+    "proof": "validator check on tie-out arithmetic"
+  },
+  {
+    "requirement_key": "external_sharing",
+    "requirement": "Nothing leaves the team without review",
+    "layer": "named_human",
+    "proof": "named human sign-off"
+  },
+  {
+    "requirement_key": "investment_judgment",
+    "requirement": "Investment conclusions are made by a person",
+    "layer": "named_human",
+    "proof": "named human sign-off"
+  }
+]

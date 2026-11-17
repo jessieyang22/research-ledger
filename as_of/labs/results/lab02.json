@@ -1,0 +1,730 @@
+{
+  "april_macro": {
+    "checks": [
+      {
+        "check_id": "april.june10_uses_june5_vintage",
+        "message": "June 10 state takes the June 5 vintage (value 2.1)",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.july3_vintage_at_july3",
+        "message": "a July 3 decision time takes the July 3 vintage",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.release_instant_is_the_cutoff",
+        "message": "one second before the 13:00Z release the cutoff returns nothing; at 13:00Z it returns the June 5 vintage",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.vintage_date_not_observation_date",
+        "message": "a June 5 vintage date does not select an observation (no June 5 observation)",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.july_cannot_enter_june10_state",
+        "message": "cutoff flags the July 3 value used at June 10 (1 finding)",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.june5_allowed_at_june10",
+        "message": "cutoff allows the June 5 value at June 10",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      },
+      {
+        "check_id": "april.clock_visibility_june10",
+        "message": "the knowledge clock shows one vintage visible at June 10",
+        "status": "pass",
+        "subject": "SYN_APR_DEMO"
+      }
+    ],
+    "details": {
+      "decision_june10": "2026-06-10T12:00:00Z",
+      "eligible_vintage_june5": {
+        "release_at": "2026-06-05T13:00:00Z",
+        "value": 2.1,
+        "vintage_date": "2026-06-05"
+      },
+      "later_vintage_july3": {
+        "release_at": "2026-07-03T13:00:00Z",
+        "value": 2.4,
+        "vintage_date": "2026-07-03"
+      },
+      "manifest_hash": "170015028caa428d4c1cbfd553f03227c20046669120d7f61b42603e8ea54199",
+      "observation": {
+        "effective_period": "2026-04",
+        "obs_date": "2026-04-01"
+      },
+      "series_id": "SYN_APR_DEMO",
+      "value_at_july3_decision": 2.4,
+      "value_at_june10": 2.1,
+      "why_july_cannot_enter_june10": "release 2026-07-03T13:00:00Z is after the 2026-06-10T12:00:00Z decision time, so the cutoff rule and the knowledge clock both exclude it"
+    }
+  },
+  "counts": {
+    "fail": 0,
+    "pass": 83,
+    "warn": 3
+  },
+  "estimate_ledger": {
+    "checks": [
+      {
+        "check_id": "estimate.pre_result_consensus",
+        "message": "consensus before the result is 1.075 (mean of 1.10 and 1.05)",
+        "status": "pass",
+        "subject": "SYN_E1,SYN_E2"
+      },
+      {
+        "check_id": "estimate.at_publication_excludes_revision",
+        "message": "at the publication instant the May 7 revision is not yet known",
+        "status": "pass",
+        "subject": "SYN_E3"
+      },
+      {
+        "check_id": "estimate.revision_known_after_publication",
+        "message": "revision knowledge_at is after the result's publication time",
+        "status": "pass",
+        "subject": "SYN_E3"
+      },
+      {
+        "check_id": "estimate.asof_distinct_from_publication",
+        "message": "revision as-of time (2026-05-07T09:00:00Z) differs from result publication (2026-05-06T20:00:00Z)",
+        "status": "pass",
+        "subject": "SYN_E3"
+      },
+      {
+        "check_id": "estimate.post_revision_consensus",
+        "message": "consensus after the revision is 1.125 (mean of 1.20 and 1.05)",
+        "status": "pass",
+        "subject": "SYN_E3"
+      },
+      {
+        "check_id": "estimate.original_row_unchanged",
+        "message": "the April row keeps its value and knowledge time after the revision",
+        "status": "pass",
+        "subject": "SYN_E1"
+      },
+      {
+        "check_id": "estimate.ledger_validates",
+        "message": "ledger validation has no FAIL",
+        "status": "pass",
+        "subject": "ledger"
+      }
+    ],
+    "details": {
+      "consensus_after_revision": 1.125,
+      "consensus_at_publication": 1.0750000000000002,
+      "consensus_before_result": 1.0750000000000002,
+      "metric": "EPS",
+      "period": "2026Q2",
+      "result_publication_at": "2026-05-06T20:00:00Z",
+      "rows": [
+        {
+          "analyst_id": "SYN_AN_A",
+          "estimate_id": "SYN_E1",
+          "knowledge_at": "2026-04-15T14:00:00Z",
+          "source_id": "SYN_SRC-NOTE-01",
+          "value": 1.1
+        },
+        {
+          "analyst_id": "SYN_AN_B",
+          "estimate_id": "SYN_E2",
+          "knowledge_at": "2026-04-20T14:00:00Z",
+          "source_id": "SYN_SRC-NOTE-01",
+          "value": 1.05
+        },
+        {
+          "analyst_id": "SYN_AN_A",
+          "estimate_id": "SYN_E3",
+          "knowledge_at": "2026-05-07T09:00:00Z",
+          "source_id": "SYN_SRC-NOTE-01",
+          "value": 1.2
+        }
+      ],
+      "ticker": "SYN_TKR"
+    }
+  },
+  "existing_field_dictionary": [
+    {
+      "check_id": "dictionary.analogue.price_as_of",
+      "message": "existing dictionary governs price_as_of by the EVENT clock",
+      "status": "pass",
+      "subject": "price_as_of"
+    },
+    {
+      "check_id": "dictionary.analogue.macro_release_at",
+      "message": "existing dictionary governs macro_release_at by the RELEASE clock",
+      "status": "pass",
+      "subject": "macro_release_at"
+    },
+    {
+      "check_id": "dictionary.analogue.ingest_at",
+      "message": "existing dictionary governs ingest_at by the INGEST clock",
+      "status": "pass",
+      "subject": "ingest_at"
+    },
+    {
+      "check_id": "dictionary.analogue.estimate_knowledge_at",
+      "message": "existing dictionary governs estimate_knowledge_at by the KNOWLEDGE clock",
+      "status": "pass",
+      "subject": "estimate_knowledge_at"
+    },
+    {
+      "check_id": "dictionary.gap.vintage_date",
+      "message": "gap: vintage_date is not in the existing as_of FIELD_DICTIONARY; the lab carries it in its own dictionary",
+      "status": "warn",
+      "subject": "vintage_date"
+    },
+    {
+      "check_id": "dictionary.gap.approved_at",
+      "message": "gap: approved_at is not in the existing as_of FIELD_DICTIONARY; the lab carries it in its own dictionary",
+      "status": "warn",
+      "subject": "approved_at"
+    },
+    {
+      "check_id": "dictionary.gap.approved_by",
+      "message": "gap: approved_by is not in the existing as_of FIELD_DICTIONARY; the lab carries it in its own dictionary",
+      "status": "warn",
+      "subject": "approved_by"
+    }
+  ],
+  "lab": "lab02",
+  "lab2_verifier": {
+    "checks": [
+      {
+        "check_id": "lab2.control_set",
+        "message": "dictionary holds the exact ten-field control set",
+        "status": "pass",
+        "subject": "dictionary"
+      },
+      {
+        "check_id": "lab2.immutability.record_id",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_text.record_id",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_good.record_id",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.record_id",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "record_id"
+      },
+      {
+        "check_id": "lab2.immutability.prior_record_id",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "prior_record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_text.prior_record_id",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "prior_record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_good.prior_record_id",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "prior_record_id"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.prior_record_id",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "prior_record_id"
+      },
+      {
+        "check_id": "lab2.immutability.source_id",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "source_id"
+      },
+      {
+        "check_id": "lab2.acceptance_text.source_id",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "source_id"
+      },
+      {
+        "check_id": "lab2.acceptance_good.source_id",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "source_id"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.source_id",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "source_id"
+      },
+      {
+        "check_id": "lab2.immutability.effective_period",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "effective_period"
+      },
+      {
+        "check_id": "lab2.acceptance_text.effective_period",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "effective_period"
+      },
+      {
+        "check_id": "lab2.acceptance_good.effective_period",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "effective_period"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.effective_period",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "effective_period"
+      },
+      {
+        "check_id": "lab2.immutability.published_at",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "published_at"
+      },
+      {
+        "check_id": "lab2.acceptance_text.published_at",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "published_at"
+      },
+      {
+        "check_id": "lab2.acceptance_good.published_at",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "published_at"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.published_at",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "published_at"
+      },
+      {
+        "check_id": "lab2.immutability.retrieved_at",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "retrieved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_text.retrieved_at",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "retrieved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_good.retrieved_at",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "retrieved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.retrieved_at",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "retrieved_at"
+      },
+      {
+        "check_id": "lab2.immutability.vintage_date",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "vintage_date"
+      },
+      {
+        "check_id": "lab2.acceptance_text.vintage_date",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "vintage_date"
+      },
+      {
+        "check_id": "lab2.acceptance_good.vintage_date",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "vintage_date"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.vintage_date",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "vintage_date"
+      },
+      {
+        "check_id": "lab2.immutability.approved_at",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "approved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_text.approved_at",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "approved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_good.approved_at",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "approved_at"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.approved_at",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "approved_at"
+      },
+      {
+        "check_id": "lab2.immutability.approved_by",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "approved_by"
+      },
+      {
+        "check_id": "lab2.acceptance_text.approved_by",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "approved_by"
+      },
+      {
+        "check_id": "lab2.acceptance_good.approved_by",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "approved_by"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.approved_by",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "approved_by"
+      },
+      {
+        "check_id": "lab2.immutability.observed_value",
+        "message": "immutability rule present",
+        "status": "pass",
+        "subject": "observed_value"
+      },
+      {
+        "check_id": "lab2.acceptance_text.observed_value",
+        "message": "acceptance test present",
+        "status": "pass",
+        "subject": "observed_value"
+      },
+      {
+        "check_id": "lab2.acceptance_good.observed_value",
+        "message": "passes example rows for all 5 clocks",
+        "status": "pass",
+        "subject": "observed_value"
+      },
+      {
+        "check_id": "lab2.acceptance_bad.observed_value",
+        "message": "rejects the bad value on all 5 clock rows",
+        "status": "pass",
+        "subject": "observed_value"
+      },
+      {
+        "check_id": "lab2.clock_example.event",
+        "message": "one-row example present with effective_period set",
+        "status": "pass",
+        "subject": "event"
+      },
+      {
+        "check_id": "lab2.clock_example.release",
+        "message": "one-row example present with published_at set",
+        "status": "pass",
+        "subject": "release"
+      },
+      {
+        "check_id": "lab2.clock_example.ingest",
+        "message": "one-row example present with retrieved_at set",
+        "status": "pass",
+        "subject": "ingest"
+      },
+      {
+        "check_id": "lab2.clock_example.vintage",
+        "message": "one-row example present with vintage_date set",
+        "status": "pass",
+        "subject": "vintage"
+      },
+      {
+        "check_id": "lab2.clock_example.approval",
+        "message": "one-row example present with approved_at set",
+        "status": "pass",
+        "subject": "approval"
+      },
+      {
+        "check_id": "lab2.clock_order.event",
+        "message": "no ordering FAIL (warn for unset clocks: ['clock.report_before_knowledge'])",
+        "status": "pass",
+        "subject": "event"
+      },
+      {
+        "check_id": "lab2.clock_order.release",
+        "message": "no ordering FAIL (warn for unset clocks: ['clock.report_before_knowledge'])",
+        "status": "pass",
+        "subject": "release"
+      },
+      {
+        "check_id": "lab2.clock_order.ingest",
+        "message": "no ordering FAIL (warn for unset clocks: ['clock.report_before_knowledge'])",
+        "status": "pass",
+        "subject": "ingest"
+      },
+      {
+        "check_id": "lab2.clock_order.vintage",
+        "message": "no ordering FAIL (warn for unset clocks: ['clock.report_before_knowledge'])",
+        "status": "pass",
+        "subject": "vintage"
+      },
+      {
+        "check_id": "lab2.clock_order.approval",
+        "message": "no ordering FAIL (warn for unset clocks: ['clock.report_before_knowledge'])",
+        "status": "pass",
+        "subject": "approval"
+      },
+      {
+        "check_id": "lab2.probe.date_only_not_end_of_day",
+        "message": "rejected: a date-only source published at 13:00 is not the conservative 23:59:59Z value",
+        "status": "pass",
+        "subject": "date_only_not_end_of_day"
+      },
+      {
+        "check_id": "lab2.probe.period_starts_after_publication",
+        "message": "rejected: a period that starts after its publication date cannot be known at publication",
+        "status": "pass",
+        "subject": "period_starts_after_publication"
+      },
+      {
+        "check_id": "lab2.probe.vintage_before_publication",
+        "message": "rejected: a vintage date one day before the published date is impossible",
+        "status": "pass",
+        "subject": "vintage_before_publication"
+      },
+      {
+        "check_id": "lab2.probe.approval_before_capture",
+        "message": "rejected: an approval earlier than the capture it approves is rejected",
+        "status": "pass",
+        "subject": "approval_before_capture"
+      }
+    ],
+    "clock_field": {
+      "approval": "approved_at",
+      "event": "effective_period",
+      "ingest": "retrieved_at",
+      "release": "published_at",
+      "vintage": "vintage_date"
+    },
+    "clocks": [
+      "event",
+      "release",
+      "ingest",
+      "vintage",
+      "approval"
+    ],
+    "control_fields": [
+      "record_id",
+      "prior_record_id",
+      "source_id",
+      "effective_period",
+      "published_at",
+      "retrieved_at",
+      "vintage_date",
+      "approved_at",
+      "approved_by",
+      "observed_value"
+    ],
+    "status": "PASS"
+  },
+  "overall": "PASS",
+  "planted_failures": [
+    {
+      "as_expected": true,
+      "description": "dictionary copy with vintage_date deleted",
+      "expected": "FAIL",
+      "expected_checks": [
+        "lab2.control_set",
+        "lab2.clock_example.vintage"
+      ],
+      "failing_checks": [
+        "lab2.control_set",
+        "lab2.immutability.vintage_date",
+        "lab2.acceptance_text.vintage_date",
+        "lab2.acceptance_good.vintage_date",
+        "lab2.acceptance_bad.vintage_date",
+        "lab2.clock_example.vintage",
+        "lab2.probe.vintage_before_publication"
+      ],
+      "missing_expected_checks": [],
+      "name": "delete_vintage_date",
+      "observed": "FAIL"
+    },
+    {
+      "as_expected": true,
+      "description": "dictionary copy with approved_at acceptance test blanked",
+      "expected": "FAIL",
+      "expected_checks": [
+        "lab2.acceptance_text.approved_at"
+      ],
+      "failing_checks": [
+        "lab2.acceptance_text.approved_at",
+        "lab2.acceptance_good.approved_at"
+      ],
+      "missing_expected_checks": [],
+      "name": "blank_acceptance_test",
+      "observed": "FAIL"
+    },
+    {
+      "as_expected": true,
+      "description": "dictionary copy whose published_at test accepts any aware datetime",
+      "expected": "FAIL",
+      "expected_checks": [
+        "lab2.probe.date_only_not_end_of_day"
+      ],
+      "failing_checks": [
+        "lab2.probe.date_only_not_end_of_day"
+      ],
+      "missing_expected_checks": [],
+      "name": "loose_published_at_test",
+      "observed": "FAIL"
+    }
+  ],
+  "revision_store": {
+    "checks": [
+      {
+        "check_id": "revision.requires_prior_record_id",
+        "message": "a revision with no prior record_id is refused",
+        "status": "pass",
+        "subject": "revision"
+      },
+      {
+        "check_id": "revision.prior_row_unchanged",
+        "message": "the first stored row is byte-identical after the revision is appended",
+        "status": "pass",
+        "subject": "REC-APR-0001"
+      },
+      {
+        "check_id": "revision.prior_link_set",
+        "message": "the revision row names REC-APR-0001 as its prior",
+        "status": "pass",
+        "subject": "REC-APR-0002"
+      },
+      {
+        "check_id": "revision.store_has_two_rows",
+        "message": "the store holds exactly the prior row and the revision",
+        "status": "pass",
+        "subject": "/private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab02_revision_scratch.jsonl"
+      }
+    ],
+    "details": {
+      "prior_row_hash": "1d199b17cdda05c131fad529cfad442e17bb1cf20a9487a0f513a174d9a85e0e",
+      "revision_refused_without_prior": true,
+      "rows_after_revision": 2,
+      "store_file": "labs/results/lab02_revision_scratch.jsonl"
+    }
+  },
+  "source_register": {
+    "checks": [
+      {
+        "check_id": "source.date_only_limitation.SYN_SRC-LIVE-CAL-01",
+        "message": "date-only source carries a limitation",
+        "status": "pass",
+        "subject": "SYN_SRC-LIVE-CAL-01"
+      },
+      {
+        "check_id": "source.registered.SYN_SRC-MACRO-01",
+        "message": "source is in the register",
+        "status": "pass",
+        "subject": "SYN_SRC-MACRO-01"
+      },
+      {
+        "check_id": "source.registered.SYN_SRC-LIVE-CAL-01",
+        "message": "source is in the register",
+        "status": "pass",
+        "subject": "SYN_SRC-LIVE-CAL-01"
+      },
+      {
+        "check_id": "source.registered.SYN_SRC-NOTE-01",
+        "message": "source is in the register",
+        "status": "pass",
+        "subject": "SYN_SRC-NOTE-01"
+      },
+      {
+        "check_id": "source.registered.SYN_SRC-RESULT-01",
+        "message": "source is in the register",
+        "status": "pass",
+        "subject": "SYN_SRC-RESULT-01"
+      },
+      {
+        "check_id": "source.unregistered_fails_once",
+        "message": "an unregistered source id gives one SRC_UNREGISTERED FAIL and a registered id gives none",
+        "status": "pass",
+        "subject": "SYN_SRC-UNREGISTERED"
+      }
+    ],
+    "entries": [
+      {
+        "limitation": "",
+        "locator": "synthetic://macro/apr-demo",
+        "published_precision": "datetime",
+        "publisher": "SYN_PUBLISHER_A",
+        "sha256": "57dd2363d9005bda2fdd206064350ad00485df845f6431725e5c3c06456078e2",
+        "source_id": "SYN_SRC-MACRO-01",
+        "source_type": "macro"
+      },
+      {
+        "limitation": "Date-only live source: the page shows a calendar date and no time. published_at is set to 23:59:59Z on that date, the latest instant the date allows, so a value is never treated as visible early. The cost is that a same-day capture looks earlier than publication, so retrieval checks on this source only accept next-day captures.",
+        "locator": "synthetic://live/calendar-page",
+        "published_precision": "date",
+        "publisher": "SYN_PUBLISHER_B",
+        "sha256": "e379321854b33ba872790d62a6391e526355eec9075a77ff500657185c883e0a",
+        "source_id": "SYN_SRC-LIVE-CAL-01",
+        "source_type": "catalyst"
+      },
+      {
+        "limitation": "",
+        "locator": "synthetic://estimates/analyst-note",
+        "published_precision": "datetime",
+        "publisher": "SYN_PUBLISHER_C",
+        "sha256": "2bcb91c4aaf9694d21460914735290f0a7182101ed11a2a75313dbb3b2a4d651",
+        "source_id": "SYN_SRC-NOTE-01",
+        "source_type": "estimate"
+      },
+      {
+        "limitation": "",
+        "locator": "synthetic://filings/reported-result",
+        "published_precision": "datetime",
+        "publisher": "SYN_PUBLISHER_D",
+        "sha256": "25c70c74e9cd2fe7af1224324def4053b2ba68114dd4e538b4f65e3ea6c4e37d",
+        "source_id": "SYN_SRC-RESULT-01",
+        "source_type": "filing"
+      }
+    ],
+    "limitations": [
+      "SYN_SRC-LIVE-CAL-01"
+    ],
+    "unregistered_check": "source.unregistered_fails_once runs source_register.check_sources_used on an unknown id"
+  },
+  "synthetic_only": true,
+  "title": "Prove the five clocks and the field dictionary"
+}

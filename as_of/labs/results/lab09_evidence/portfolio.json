@@ -1,0 +1,21 @@
+{
+  "findings_open": 1,
+  "findings_total": 4,
+  "metrics": {
+    "beta_max_abs_error": 7.771561172376096e-16,
+    "book_value": 165797.3039,
+    "hard_fail_count": 0.0,
+    "tieout_break_count": 1.0,
+    "tieout_matched": 2.0
+  },
+  "open": [
+    {
+      "check_id": "tieout.break",
+      "message": "[block] book_qty=416.0 custodian_qty=666.0 delta=-250.0",
+      "status": "fail",
+      "subject": "SYN_A"
+    }
+  ],
+  "passed": true,
+  "proof": "proof4_portfolio_tieout_factor"
+}

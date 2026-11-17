@@ -1,0 +1,26 @@
+{
+  "findings_open": 2,
+  "findings_total": 4,
+  "metrics": {
+    "expected_count": 4.0,
+    "filing_occurred_count": 2.0,
+    "matched": 1.0,
+    "queue_size": 4.0
+  },
+  "open": [
+    {
+      "check_id": "CLAIM_UNLINKED",
+      "message": "WARN: claim 'SYN_CLM_03' has no catalyst link",
+      "status": "warn",
+      "subject": "SYN_CLM_03"
+    },
+    {
+      "check_id": "CHECK_FAILED",
+      "message": "WARN: claim 'SYN_CLM_02' links to unknown catalyst 'SYN_CAT_99'",
+      "status": "warn",
+      "subject": "SYN_CLM_02"
+    }
+  ],
+  "passed": true,
+  "proof": "catalyst_exception_queue"
+}

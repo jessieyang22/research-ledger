@@ -1,0 +1,72 @@
+[
+  {
+    "item_id": "HC01",
+    "text": "Task name and instructions copied from the saved contract",
+    "checked": true,
+    "evidence": "automated",
+    "gate_id": null
+  },
+  {
+    "item_id": "HC02",
+    "text": "Schedule left Manual and the task paused until the proof passes",
+    "checked": true,
+    "evidence": "automated",
+    "gate_id": null
+  },
+  {
+    "item_id": "HC03",
+    "text": "Sample folder selected and matches the contract folder",
+    "checked": true,
+    "evidence": "automated",
+    "gate_id": null
+  },
+  {
+    "item_id": "HC04",
+    "text": "Allowed writes limited to the queue-only output",
+    "checked": true,
+    "evidence": "automated",
+    "gate_id": null
+  },
+  {
+    "item_id": "HC05",
+    "text": "Every permission request inspected and decided",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "desk.run_now_permissions"
+  },
+  {
+    "item_id": "HC06",
+    "text": "Run now and run history recorded (time, folder, completion, output, stall)",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "desk.run_history"
+  },
+  {
+    "item_id": "HC07",
+    "text": "REVIEW_REQUIRED confirmed on a clean run",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "desk.clean_run_review_required"
+  },
+  {
+    "item_id": "HC08",
+    "text": "FAILED confirmed for late, overlapping and partial-input runs",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "desk.failure_runs_failed"
+  },
+  {
+    "item_id": "HC09",
+    "text": "Second analyst reran the verifier from the folder and checklist only",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "handoff.second_analyst_rerun"
+  },
+  {
+    "item_id": "HC10",
+    "text": "Packet hashes compared and discrepancies recorded",
+    "checked": false,
+    "evidence": "manual",
+    "gate_id": "handoff.second_analyst_rerun"
+  }
+]

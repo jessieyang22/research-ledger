@@ -1,0 +1,7 @@
+{
+  "packet": "as_of/labs/results/lab09_packet.md",
+  "status": "PENDING_HUMAN",
+  "approved_by": null,
+  "approved_at": null,
+  "note": "Human sign-off is recorded here by a named reviewer after sampling the packet. The lab never writes an approval."
+}

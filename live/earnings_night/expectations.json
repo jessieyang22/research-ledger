@@ -1,0 +1,20 @@
+{
+  "state_id": "EN_AMH_INVH_Q3_2026",
+  "evidence_label": "DOCUMENTED",
+  "note": "Pre-print expectations for the INVH and AMH Q3 2026 releases. Sources are the companies' Q2 2026 releases and third-party consensus as logged in jessieyang22/amh-invh-pitch (market_catalysts.md, 2026-10-05). Nothing here is a forecast of the print.",
+  "items": [
+    {"ticker": "INVH", "metric": "core_ffo_fy26_guidance_mid", "period": "FY2026", "value": 1.95, "analyst_id": "company_guidance_q2", "source": "INVH Q2 2026 release, 2026-07-29 (guidance 1.92-1.98)", "source_date": "2026-07-29"},
+    {"ticker": "AMH",  "metric": "core_ffo_fy26_guidance_mid", "period": "FY2026", "value": 1.95, "analyst_id": "company_guidance_q2", "source": "AMH Q2 2026 release, 2026-07-30 (guidance 1.93-1.97)", "source_date": "2026-07-30"},
+    {"ticker": "INVH", "metric": "core_ffo_fy26_consensus", "period": "FY2026", "value": 1.96, "analyst_id": "stockanalysis_consensus", "source": "StockAnalysis, logged in amh-invh-pitch 2026-10-05", "source_date": "2026-10-05"},
+    {"ticker": "AMH",  "metric": "core_ffo_fy26_consensus", "period": "FY2026", "value": 1.95, "analyst_id": "stockanalysis_consensus", "source": "StockAnalysis, logged in amh-invh-pitch 2026-10-05", "source_date": "2026-10-05"},
+    {"ticker": "INVH", "metric": "ss_noi_fy26_guidance_mid", "period": "FY2026", "value": 1.15, "analyst_id": "company_guidance_q2", "source": "INVH Q2 2026 release (range 0.3%-2.0%)", "source_date": "2026-07-29"},
+    {"ticker": "AMH",  "metric": "ss_noi_fy26_guidance_mid", "period": "FY2026", "value": 2.4, "analyst_id": "company_guidance_q2", "source": "AMH Q2 2026 release (range 1.4%-3.4%)", "source_date": "2026-07-30"},
+    {"ticker": "INVH", "metric": "ss_rev_fy26_guidance_mid", "period": "FY2026", "value": 1.9, "analyst_id": "company_guidance_q2", "source": "amh-invh-pitch market_catalysts.md (midpoint 1.9%)", "source_date": "2026-07-29"},
+    {"ticker": "AMH",  "metric": "ss_rev_fy26_guidance_mid", "period": "FY2026", "value": 2.25, "analyst_id": "company_guidance_q2", "source": "AMH Q2 2026 release (range 1.5%-3.0%)", "source_date": "2026-07-30"}
+  ],
+  "gaps": [
+    "Q3 2026 Core FFO per share consensus for INVH and AMH was not found, so no quarterly surprise is computed.",
+    "Same-store NOI consensus was not found (guidance only).",
+    "Release dates are from yfinance (INVH 2026-10-28 after close; AMH listed 2026-11-04) and are unconfirmed."
+  ]
+}

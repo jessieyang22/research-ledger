@@ -1,0 +1,64 @@
+{
+  "section_states": {
+    "catalyst": "unchanged",
+    "decision": "unchanged",
+    "earnings": "unchanged",
+    "exceptions": "unchanged",
+    "macro": "unchanged",
+    "portfolio": "changed",
+    "validation": "changed"
+  },
+  "source_hashes": {
+    "SRC_LAB06_INPUT": "092afe4440af107456470fcf5c0fda2e1ffb1e863804a90f68924be03e96b0ea",
+    "SRC_LAB06_RESULT": "ebcea01c019ce9085445b01ecb09f35e05736be96896f25ee14affb31fd092f5",
+    "SRC_PROOF_CATALYST": "cefea41ecdc8dc3aef9fa85ca2a0e71274334889268996d95d54eef8c4107cf1",
+    "SRC_PROOF_EARNINGS": "7d13fe83ed124a45f5640cc480a58702cf8b9197567d30f830d1f07e1ddcd9fe",
+    "SRC_PROOF_MACRO": "9064d9651ca848e664b14838bdcad779c80bd24f990f5e2a0e71b1cbecc97c4c",
+    "SRC_PROOF_PM_PACKET": "e7244739588b6aff62c211c1e39d524daf4a29e8ffe25988b10ca4565af726fc",
+    "SRC_PROOF_PORTFOLIO": "c3d7f29935ed072656a952913beac6ec36933c56e038b3f3cb0e2576b8d978a2"
+  },
+  "sources": [
+    {
+      "path": "as_of/labs/data/lab06_macro_vintages.csv",
+      "sha256": "092afe4440af107456470fcf5c0fda2e1ffb1e863804a90f68924be03e96b0ea",
+      "source_id": "SRC_LAB06_INPUT",
+      "state": "unchanged"
+    },
+    {
+      "path": "as_of/labs/results/lab06.json",
+      "sha256": "ebcea01c019ce9085445b01ecb09f35e05736be96896f25ee14affb31fd092f5",
+      "source_id": "SRC_LAB06_RESULT",
+      "state": "changed"
+    },
+    {
+      "path": "as_of/wf_earnings_reconciliation.py",
+      "sha256": "7d13fe83ed124a45f5640cc480a58702cf8b9197567d30f830d1f07e1ddcd9fe",
+      "source_id": "SRC_PROOF_EARNINGS",
+      "state": "changed"
+    },
+    {
+      "path": "as_of/wf_macro_vintage.py",
+      "sha256": "9064d9651ca848e664b14838bdcad779c80bd24f990f5e2a0e71b1cbecc97c4c",
+      "source_id": "SRC_PROOF_MACRO",
+      "state": "changed"
+    },
+    {
+      "path": "as_of/wf_catalyst_exception_queue.py",
+      "sha256": "cefea41ecdc8dc3aef9fa85ca2a0e71274334889268996d95d54eef8c4107cf1",
+      "source_id": "SRC_PROOF_CATALYST",
+      "state": "changed"
+    },
+    {
+      "path": "as_of/wf_portfolio_tieout_factor.py",
+      "sha256": "c3d7f29935ed072656a952913beac6ec36933c56e038b3f3cb0e2576b8d978a2",
+      "source_id": "SRC_PROOF_PORTFOLIO",
+      "state": "changed"
+    },
+    {
+      "path": "as_of/wf_pm_packet.py",
+      "sha256": "e7244739588b6aff62c211c1e39d524daf4a29e8ffe25988b10ca4565af726fc",
+      "source_id": "SRC_PROOF_PM_PACKET",
+      "state": "changed"
+    }
+  ]
+}

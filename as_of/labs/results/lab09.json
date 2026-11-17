@@ -1,0 +1,468 @@
+{
+  "approval_record": "as_of/labs/signoffs/lab09_signoff.json",
+  "checks": [
+    {
+      "check_id": "input.lab_verifier:lab01",
+      "message": "exit_code=0 last_line=wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab01.json: PASS_STRUCTURE_ONLY_REVIEW_OPEN",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.lab_verifier:lab02",
+      "message": "exit_code=0 last_line=results: /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab02.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.lab_verifier:lab03",
+      "message": "exit_code=0 last_line=lab03 overall: PASS (32 checks, 0 failed)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.lab_verifier:lab05",
+      "message": "exit_code=0 last_line=wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab05.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.lab_verifier:lab06",
+      "message": "exit_code=0 last_line=results written to /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab06.json",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.proof:earnings",
+      "message": "proof=earnings_reconciliation passed=True findings=1",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.proof:macro",
+      "message": "proof=proof_2_macro_vintage passed=True findings=2",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.proof:catalyst",
+      "message": "proof=catalyst_exception_queue passed=True findings=4",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.proof:portfolio",
+      "message": "proof=proof4_portfolio_tieout_factor passed=True findings=4",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.proof:pm_packet",
+      "message": "proof=pm_packet passed=True findings=3",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input.protected_hash:lab06_input",
+      "message": "current=092afe4440af1074 recorded=092afe4440af1074",
+      "status": "PASS"
+    },
+    {
+      "check_id": "input_list_matches_spec",
+      "message": "11 inputs match INPUT_SPEC",
+      "status": "PASS"
+    },
+    {
+      "check_id": "packet_build_prompt_checked",
+      "message": "found=False; no packet-build prompt file exists in the repo; INPUT_SPEC was used instead",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.reported_value",
+      "message": "SYN_T01|eps|2025Q4 path=as_of/earnings_fixture.py: reported_value=3.3563; matching rows in a second fixture build=1; value equal: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.estimate_change",
+      "message": "SYN_T01|revenue|2025Q1 path=as_of/earnings_fixture.py: 3 rows; first=857.9889 last=893.7249 change=35.736; knowledge times distinct: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.macro_vintage",
+      "message": "SYN_GDP|2025-07-01|2025-07-31 path=as_of/macro_fixture.py: value=0.74; newest vintage released by decision time 2025-08-01T00:00:00+00:00 is 2025-07-31",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.catalyst_delta",
+      "message": "CLAIM_UNLINKED|SYN_CLM_03 path=as_of/catalyst_fixture.py: subject in expected exceptions: True; open list matches expected multiset: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.portfolio_total",
+      "message": "book_value path=as_of/wf_portfolio_tieout_factor.py: proof book_value=165797.3039; independent re-sum=165797.3039; within tolerance: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "sample.protected_hash",
+      "message": "lab06_macro_vintages.csv path=as_of/labs/data/lab06_macro_vintages.csv: current=092afe4440af1074 recorded=092afe4440af1074",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.reported_value",
+      "message": "planted=rebuilt value +1.0 and empty rebuild; judge rejects both: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.estimate_change",
+      "message": "planted=two rows with one knowledge time; judge rejects: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.macro_vintage",
+      "message": "planted=oldest vintage picked while a newer one is released; judge rejects: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.catalyst_delta",
+      "message": "planted=unexpected subject; expected subject with open list mismatch; judge rejects both: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.portfolio_total",
+      "message": "planted=proof value +1.0; one close +1.0 in the recount; judge rejects both: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "control.protected_hash",
+      "message": "planted=current hash replaced by zeros; recorded value missing; judge rejects both: True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "normal_packet_built_only_if_inputs_pass",
+      "message": "packet_type=normal; all inputs valid=True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema_control_header",
+      "message": "control header present with keys state_cutoff, evidence_labels, validation_status, review_status; missing=none",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema_required_sections",
+      "message": "required sections Changed sources, Earnings, Macro, Catalyst, Portfolio, Exceptions, Validation, Decision; missing=none duplicated=none order_ok=True",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema_section_paths",
+      "message": "each required section links to an existing path; problems=none",
+      "status": "PASS"
+    },
+    {
+      "check_id": "schema_exception_repairs",
+      "message": "4 exception lines, each with a repair; without repair=none",
+      "status": "PASS"
+    },
+    {
+      "check_id": "validation_status_pass",
+      "message": "control header validation_status=PASS (required PASS)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "review_state_review_required",
+      "message": "control header review_status=REVIEW_REQUIRED (required REVIEW_REQUIRED; approval lives in signoffs)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "signoff_record_pending_separately",
+      "message": "status=PENDING_HUMAN approved_by=None",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.A_macro_heading_deleted_schema_fails",
+      "message": "heading removed in memory; failing checks=['schema_required_sections', 'schema_section_paths']",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.B_review_status_approved_status_fails",
+      "message": "review_status set to APPROVED in memory; failing checks=['review_state_review_required']",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.C_validation_status_fail_status_fails",
+      "message": "validation_status set to FAIL in memory; failing checks=['validation_status_pass']",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.D_exception_repair_stripped_fails",
+      "message": "one exception line stripped of its repair in memory; failing checks=['schema_exception_repairs']",
+      "status": "PASS"
+    },
+    {
+      "check_id": "refusal_failure_only_when_input_fails",
+      "message": "packet_type=failure_only; normal headings absent=True",
+      "status": "PASS"
+    }
+  ],
+  "coverage_gaps": [
+    "no lab verifier for labs 4, 7 and 8 under as_of/labs",
+    "lab10 has data files under as_of/labs/data but no lab script"
+  ],
+  "data": "synthetic only (SYN_ identifiers; fixtures with fixed seeds)",
+  "evidence_payload_sha256": "1307b2604255d15898dd867efdd65eafe4657f8327a9ad24f6fac6ce2db3b17d",
+  "input_spec": [
+    "lab_verifier:lab01",
+    "lab_verifier:lab02",
+    "lab_verifier:lab03",
+    "lab_verifier:lab05",
+    "lab_verifier:lab06",
+    "proof:earnings",
+    "proof:macro",
+    "proof:catalyst",
+    "proof:portfolio",
+    "proof:pm_packet",
+    "protected_hash:lab06_input"
+  ],
+  "lab": "lab09",
+  "lab_verifiers": [
+    {
+      "exit_code": 0,
+      "lab": "lab01",
+      "label": "routing matrix",
+      "last_line": "wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab01.json: PASS_STRUCTURE_ONLY_REVIEW_OPEN",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "lab": "lab02",
+      "label": "clock and field dictionary",
+      "last_line": "results: /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab02.json",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "lab": "lab03",
+      "label": "freeze and checkpoint",
+      "last_line": "lab03 overall: PASS (32 checks, 0 failed)",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "lab": "lab05",
+      "label": "earnings reconciliation and revision",
+      "last_line": "wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab05.json",
+      "passed": true
+    },
+    {
+      "exit_code": 0,
+      "lab": "lab06",
+      "label": "macro vintage cutoff",
+      "last_line": "results written to /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab06.json",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "a PASS shows only that the synthetic packet agrees with the synthetic proofs, the state cutoff label and the packet schema rules in this file",
+    "the packet is not approved; approval is a named human step recorded in as_of/labs/signoffs",
+    "no packet-build prompt exists in the repo, so the input list is INPUT_SPEC, not a checked prompt",
+    "labs 4, 7 and 8 have no lab verifier run by this lab; the packet records that gap",
+    "sample strength differs by class (see STRENGTH); only the portfolio sample is an independent recount, and the reported value, estimate, macro, catalyst and hash samples are fixture or proof-output checks",
+    "each sampling judge is tested by a planted-fault negative control; a control that is not rejected fails the lab",
+    "no network call, no live data, no order or trading logic"
+  ],
+  "negative_controls": [
+    {
+      "class": "reported_value",
+      "detail": "judge rejects both: True",
+      "planted": "rebuilt value +1.0 and empty rebuild",
+      "rejected": true
+    },
+    {
+      "class": "estimate_change",
+      "detail": "judge rejects: True",
+      "planted": "two rows with one knowledge time",
+      "rejected": true
+    },
+    {
+      "class": "macro_vintage",
+      "detail": "judge rejects: True",
+      "planted": "oldest vintage picked while a newer one is released",
+      "rejected": true
+    },
+    {
+      "class": "catalyst_delta",
+      "detail": "judge rejects both: True",
+      "planted": "unexpected subject; expected subject with open list mismatch",
+      "rejected": true
+    },
+    {
+      "class": "portfolio_total",
+      "detail": "judge rejects both: True",
+      "planted": "proof value +1.0; one close +1.0 in the recount",
+      "rejected": true
+    },
+    {
+      "class": "protected_hash",
+      "detail": "judge rejects both: True",
+      "planted": "current hash replaced by zeros; recorded value missing",
+      "rejected": true
+    }
+  ],
+  "overall": "PASS",
+  "packet_build_prompt": {
+    "found": false,
+    "hits": [],
+    "note": "no packet-build prompt file exists in the repo; INPUT_SPEC was used instead"
+  },
+  "packet_path": "as_of/labs/results/lab09_packet.md",
+  "packet_type": "normal",
+  "review_status": "REVIEW_REQUIRED",
+  "risk_based_items": [
+    {
+      "check_id": "CLAIM_UNLINKED",
+      "message": "WARN: claim 'SYN_CLM_03' has no catalyst link",
+      "source": "catalyst",
+      "status": "warn",
+      "subject": "SYN_CLM_03"
+    },
+    {
+      "check_id": "CHECK_FAILED",
+      "message": "WARN: claim 'SYN_CLM_02' links to unknown catalyst 'SYN_CAT_99'",
+      "source": "catalyst",
+      "status": "warn",
+      "subject": "SYN_CLM_02"
+    },
+    {
+      "check_id": "tieout.break",
+      "message": "[block] book_qty=416.0 custodian_qty=666.0 delta=-250.0",
+      "source": "portfolio",
+      "status": "fail",
+      "subject": "SYN_A"
+    },
+    {
+      "check_id": "claim_open",
+      "message": "claim status is 'open'",
+      "source": "pm_packet",
+      "status": "warn",
+      "subject": "SYN_CL_08"
+    }
+  ],
+  "samples": [
+    {
+      "class": "reported_value",
+      "detail": "reported_value=3.3563; matching rows in a second fixture build=1; value equal: True",
+      "item": "SYN_T01|eps|2025Q4",
+      "path": "as_of/earnings_fixture.py",
+      "result": "PASS",
+      "strength": "reproducibility only: the same fixture generator is run a second time"
+    },
+    {
+      "class": "estimate_change",
+      "detail": "3 rows; first=857.9889 last=893.7249 change=35.736; knowledge times distinct: True",
+      "item": "SYN_T01|revenue|2025Q1",
+      "path": "as_of/earnings_fixture.py",
+      "result": "PASS",
+      "strength": "structural: no tied knowledge times inside the estimate group"
+    },
+    {
+      "class": "macro_vintage",
+      "detail": "value=0.74; newest vintage released by decision time 2025-08-01T00:00:00+00:00 is 2025-07-31",
+      "item": "SYN_GDP|2025-07-01|2025-07-31",
+      "path": "as_of/macro_fixture.py",
+      "result": "PASS",
+      "strength": "rule check: newest vintage released by the decision time, on the fixture"
+    },
+    {
+      "class": "catalyst_delta",
+      "detail": "subject in expected exceptions: True; open list matches expected multiset: True",
+      "item": "CLAIM_UNLINKED|SYN_CLM_03",
+      "path": "as_of/catalyst_fixture.py",
+      "result": "PASS",
+      "strength": "proof output against fixture expectations (not an independent recount)"
+    },
+    {
+      "class": "portfolio_total",
+      "detail": "proof book_value=165797.3039; independent re-sum=165797.3039; within tolerance: True",
+      "item": "book_value",
+      "path": "as_of/wf_portfolio_tieout_factor.py",
+      "result": "PASS",
+      "strength": "independent recount: book value re-summed from positions and close prices"
+    },
+    {
+      "class": "protected_hash",
+      "detail": "current=092afe4440af1074 recorded=092afe4440af1074",
+      "item": "lab06_macro_vintages.csv",
+      "path": "as_of/labs/data/lab06_macro_vintages.csv",
+      "result": "PASS",
+      "strength": "same comparison as the input validator, not an independent check"
+    }
+  ],
+  "state_cutoff": "2026-10-27T00:00:00Z",
+  "validators": [
+    {
+      "detail": "exit_code=0 last_line=wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab01.json: PASS_STRUCTURE_ONLY_REVIEW_OPEN",
+      "input_id": "lab_verifier:lab01",
+      "kind": "lab_verifier",
+      "passed": true,
+      "path": "as_of/labs/lab01.py"
+    },
+    {
+      "detail": "exit_code=0 last_line=results: /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab02.json",
+      "input_id": "lab_verifier:lab02",
+      "kind": "lab_verifier",
+      "passed": true,
+      "path": "as_of/labs/lab02.py"
+    },
+    {
+      "detail": "exit_code=0 last_line=lab03 overall: PASS (32 checks, 0 failed)",
+      "input_id": "lab_verifier:lab03",
+      "kind": "lab_verifier",
+      "passed": true,
+      "path": "as_of/labs/lab03.py"
+    },
+    {
+      "detail": "exit_code=0 last_line=wrote /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab05.json",
+      "input_id": "lab_verifier:lab05",
+      "kind": "lab_verifier",
+      "passed": true,
+      "path": "as_of/labs/lab05.py"
+    },
+    {
+      "detail": "exit_code=0 last_line=results written to /private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab06.json",
+      "input_id": "lab_verifier:lab06",
+      "kind": "lab_verifier",
+      "passed": true,
+      "path": "as_of/labs/lab06.py"
+    },
+    {
+      "detail": "proof=earnings_reconciliation passed=True findings=1",
+      "input_id": "proof:earnings",
+      "kind": "proof",
+      "passed": true,
+      "path": "as_of/wf_earnings_reconciliation.py"
+    },
+    {
+      "detail": "proof=proof_2_macro_vintage passed=True findings=2",
+      "input_id": "proof:macro",
+      "kind": "proof",
+      "passed": true,
+      "path": "as_of/wf_macro_vintage.py"
+    },
+    {
+      "detail": "proof=catalyst_exception_queue passed=True findings=4",
+      "input_id": "proof:catalyst",
+      "kind": "proof",
+      "passed": true,
+      "path": "as_of/wf_catalyst_exception_queue.py"
+    },
+    {
+      "detail": "proof=proof4_portfolio_tieout_factor passed=True findings=4",
+      "input_id": "proof:portfolio",
+      "kind": "proof",
+      "passed": true,
+      "path": "as_of/wf_portfolio_tieout_factor.py"
+    },
+    {
+      "detail": "proof=pm_packet passed=True findings=3",
+      "input_id": "proof:pm_packet",
+      "kind": "proof",
+      "passed": true,
+      "path": "as_of/wf_pm_packet.py"
+    },
+    {
+      "detail": "current=092afe4440af1074 recorded=092afe4440af1074",
+      "input_id": "protected_hash:lab06_input",
+      "kind": "protected_hash",
+      "passed": true,
+      "path": "as_of/labs/data/lab06_macro_vintages.csv"
+    }
+  ]
+}

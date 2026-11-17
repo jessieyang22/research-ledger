@@ -1,0 +1,339 @@
+{
+  "checks": [
+    {
+      "detail": "field present",
+      "id": "orientation_has_cutoff",
+      "status": "PASS"
+    },
+    {
+      "detail": "field present",
+      "id": "orientation_has_evidence_label",
+      "status": "PASS"
+    },
+    {
+      "detail": "field present",
+      "id": "orientation_has_immutable_paths",
+      "status": "PASS"
+    },
+    {
+      "detail": "field present",
+      "id": "orientation_has_append_only_paths",
+      "status": "PASS"
+    },
+    {
+      "detail": "field present",
+      "id": "orientation_has_queue_only_output",
+      "status": "PASS"
+    },
+    {
+      "detail": "field present",
+      "id": "orientation_has_validation_action",
+      "status": "PASS"
+    },
+    {
+      "detail": "immutable_paths equals the six lab inputs",
+      "id": "orientation_immutable_paths_are_the_six_inputs",
+      "status": "PASS"
+    },
+    {
+      "detail": "output is queue/ only",
+      "id": "orientation_queue_only_output",
+      "status": "PASS"
+    },
+    {
+      "detail": "ledger is append-only",
+      "id": "orientation_append_only_includes_ledger",
+      "status": "PASS"
+    },
+    {
+      "detail": "validation action is report_only",
+      "id": "orientation_validation_action_report_only",
+      "status": "PASS"
+    },
+    {
+      "detail": "manifest and sibling digest file exist and agree",
+      "id": "freeze_wrote_manifest_and_sibling_digest",
+      "status": "PASS"
+    },
+    {
+      "detail": "saved manifest digest matches its body",
+      "id": "lab3_verifier:manifest_verifies",
+      "status": "PASS"
+    },
+    {
+      "detail": "step count 1",
+      "id": "lab3_verifier:manifest_has_one_step",
+      "status": "PASS"
+    },
+    {
+      "detail": "sibling file holds one body digest equal to the manifest digest",
+      "id": "lab3_verifier:sibling_manifest_body_digest",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/prices.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/estimates.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/filings.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/macro_vintages.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/catalysts.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "current bytes match frozen bytes",
+      "id": "lab3_verifier:input_bytes_match:inputs/sources.csv",
+      "status": "PASS"
+    },
+    {
+      "detail": "manifest keys equal the immutable list and each input has one stored digest",
+      "id": "lab3_verifier:checksum_coverage_matches_manifest",
+      "status": "PASS"
+    },
+    {
+      "detail": "frozen_input_verifier over the six immutable inputs",
+      "id": "lab3_verifier_status",
+      "status": "PASS"
+    },
+    {
+      "detail": "only new files under queue/ are allowed; no input, prior state or prior ledger row changed",
+      "id": "diff_review_no_forbidden_changes",
+      "status": "PASS"
+    },
+    {
+      "detail": "one added space fails the digest although the parsed value is unchanged",
+      "id": "planted_space_breaks_digest",
+      "status": "PASS"
+    },
+    {
+      "detail": "clean bytes restored in the disposable copy and rerun",
+      "id": "restored_copy_passes",
+      "status": "PASS"
+    },
+    {
+      "detail": "a changed prior ledger row is rejected by review_diff",
+      "id": "negative_control_ledger_row_edit_fails_diff_review",
+      "status": "PASS"
+    },
+    {
+      "detail": "a changed prior-state file is rejected by review_diff",
+      "id": "negative_control_prior_state_edit_fails_diff_review",
+      "status": "PASS"
+    },
+    {
+      "detail": "a violating pipeline stub is rejected by review_diff with the expected reason",
+      "id": "negative_control_pipeline_edits_immutable_input_fails_diff_review",
+      "status": "PASS"
+    },
+    {
+      "detail": "a violating pipeline stub is rejected by review_diff with the expected reason",
+      "id": "negative_control_pipeline_writes_outside_queue_fails_diff_review",
+      "status": "PASS"
+    },
+    {
+      "detail": "a tampered manifest or sibling digest makes frozen_input_verifier FAIL",
+      "id": "negative_control_manifest_body_tamper_fails_verifier",
+      "status": "PASS"
+    },
+    {
+      "detail": "a tampered manifest or sibling digest makes frozen_input_verifier FAIL",
+      "id": "negative_control_sibling_digest_tamper_fails_verifier",
+      "status": "PASS"
+    },
+    {
+      "detail": "the real sample project was not touched by the planted run",
+      "id": "real_project_still_passes_after_planted_run",
+      "status": "PASS"
+    }
+  ],
+  "data": "synthetic",
+  "diff_review": {
+    "added": [
+      "queue/report_lab03.md"
+    ],
+    "allowed_added_under_queue": [
+      "queue/report_lab03.md"
+    ],
+    "modified": [],
+    "removed": [],
+    "status": "PASS",
+    "violations": []
+  },
+  "freeze": {
+    "immutable_inputs": [
+      "inputs/prices.csv",
+      "inputs/estimates.csv",
+      "inputs/filings.csv",
+      "inputs/macro_vintages.csv",
+      "inputs/catalysts.csv",
+      "inputs/sources.csv"
+    ],
+    "manifest_digest": "95f032ba1e3c4019ef530a3dc311862f37b2d596467e69b8329c23e0995ad36e",
+    "manifest_path": "state/frozen_state_manifest.json",
+    "sibling_digest_path": "state/frozen_state_manifest.sha256"
+  },
+  "fresh_session": {
+    "method": "run this script in two separate processes and compare the two JSON files byte for byte",
+    "status": "not_run_by_script"
+  },
+  "lab": "lab03",
+  "lab3_verifier": {
+    "coverage": {
+      "immutable_inputs": 6,
+      "inputs_matching": 6,
+      "inputs_with_exactly_one_stored_digest": 6,
+      "manifest_input_keys": 6,
+      "manifest_keys_equal_immutable_list": true
+    },
+    "inputs": [
+      {
+        "current_sha256": "448d0c0a3349830d52cab06187c2d97f920bd127395054ba06b0ef841aee21ba",
+        "match": true,
+        "path": "inputs/prices.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "448d0c0a3349830d52cab06187c2d97f920bd127395054ba06b0ef841aee21ba"
+      },
+      {
+        "current_sha256": "c24834f6c4c0832a72b6e035171946a4b5ff4e888b9f887bad50d2529266a3c8",
+        "match": true,
+        "path": "inputs/estimates.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "c24834f6c4c0832a72b6e035171946a4b5ff4e888b9f887bad50d2529266a3c8"
+      },
+      {
+        "current_sha256": "1e8d1b154cc8606228ef39e7c565d8e9a87f30cccd12a60a6f82a2c18a74eb92",
+        "match": true,
+        "path": "inputs/filings.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "1e8d1b154cc8606228ef39e7c565d8e9a87f30cccd12a60a6f82a2c18a74eb92"
+      },
+      {
+        "current_sha256": "963ada072e344460eba9dabdf9797621420c6e1300402521b162c8d0283cadf6",
+        "match": true,
+        "path": "inputs/macro_vintages.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "963ada072e344460eba9dabdf9797621420c6e1300402521b162c8d0283cadf6"
+      },
+      {
+        "current_sha256": "b4e02a49aa526ffa1e469ccc20ac92098918807f8ab875a7356870961b40898d",
+        "match": true,
+        "path": "inputs/catalysts.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "b4e02a49aa526ffa1e469ccc20ac92098918807f8ab875a7356870961b40898d"
+      },
+      {
+        "current_sha256": "d36061ba8e8cfb0260ab14384438f1ddf1d4d8e057709d013fb592c6c465cc7f",
+        "match": true,
+        "path": "inputs/sources.csv",
+        "stored_digests_in_sibling_file": 1,
+        "stored_sha256": "d36061ba8e8cfb0260ab14384438f1ddf1d4d8e057709d013fb592c6c465cc7f"
+      }
+    ],
+    "note": "lab-local verifier for the six frozen inputs",
+    "status": "PASS"
+  },
+  "manifest_tamper_controls": {
+    "manifest_body_tamper": {
+      "caught": true,
+      "edited": true,
+      "manifest_verifies_status": "FAIL",
+      "status": "FAIL"
+    },
+    "sibling_digest_tamper": {
+      "caught": true,
+      "edited": true,
+      "input_check_status": "FAIL",
+      "status": "FAIL"
+    }
+  },
+  "negative_controls": {
+    "ledger_row_edit": {
+      "edited": true,
+      "path": "ledger/estimate_ledger.jsonl",
+      "reasons": [
+        "prior ledger row changed"
+      ],
+      "status": "FAIL"
+    },
+    "prior_state_edit": {
+      "edited": true,
+      "path": "state/prior_state.json",
+      "reasons": [
+        "protected path changed"
+      ],
+      "status": "FAIL"
+    }
+  },
+  "not_shown": [
+    "A PASS shows only that current bytes match the frozen bytes.",
+    "A PASS does not show the source was correct, legally acquired or complete.",
+    "The Manual-mode session and a fresh Claude session are not started by this script.",
+    "The Desktop path was not directly tested for this edition."
+  ],
+  "orientation": {
+    "append_only_paths": [
+      "ledger/estimate_ledger.jsonl"
+    ],
+    "cutoff": "2026-10-27T00:00:00Z",
+    "evidence_label": "synthetic",
+    "immutable_paths": [
+      "inputs/prices.csv",
+      "inputs/estimates.csv",
+      "inputs/filings.csv",
+      "inputs/macro_vintages.csv",
+      "inputs/catalysts.csv",
+      "inputs/sources.csv"
+    ],
+    "project": "SYN_sample_project",
+    "queue_only_output": "queue",
+    "validation_action": "report_only"
+  },
+  "overall": "PASS",
+  "pipeline_violation_controls": {
+    "pipeline_edits_immutable_input": {
+      "caught": true,
+      "expected_reason": "protected path changed",
+      "path": "inputs/prices.csv",
+      "reasons": [
+        "protected path changed"
+      ],
+      "status": "FAIL"
+    },
+    "pipeline_writes_outside_queue": {
+      "caught": true,
+      "expected_reason": "added outside queue/",
+      "path": "ledger/stray_output.txt",
+      "reasons": [
+        "added outside queue/"
+      ],
+      "status": "FAIL"
+    }
+  },
+  "planted_failure": {
+    "digest_failed_for_mutated_input": true,
+    "economic_value_equal": true,
+    "mutated_input": "inputs/prices.csv",
+    "mutated_run_status": "FAIL",
+    "one_byte_added": true,
+    "other_inputs_still_match": true,
+    "planted_copy": "labs/work/planted_copy",
+    "restored_run_status": "PASS"
+  },
+  "project": "SYN_sample_project",
+  "title": "Freeze and verify the first checkpoint"
+}

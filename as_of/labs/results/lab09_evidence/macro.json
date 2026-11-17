@@ -1,0 +1,14 @@
+{
+  "findings_open": 0,
+  "findings_total": 2,
+  "metrics": {
+    "decision_count": 9.0,
+    "observation_count": 6.0,
+    "revised_observation_count": 3.0,
+    "vintage_count": 9.0,
+    "violation_count": 0.0
+  },
+  "open": [],
+  "passed": true,
+  "proof": "proof_2_macro_vintage"
+}

@@ -1,0 +1,16 @@
+{
+  "findings_open": 0,
+  "findings_total": 1,
+  "metrics": {
+    "n_beat": 11.0,
+    "n_bridges_with_expected": 24.0,
+    "n_inline": 7.0,
+    "n_lookahead_rows": 0.0,
+    "n_miss": 6.0,
+    "n_reports": 24.0,
+    "n_unregistered_sources": 0.0
+  },
+  "open": [],
+  "passed": true,
+  "proof": "earnings_reconciliation"
+}

@@ -1,0 +1,40 @@
+{
+  "open": [
+    {
+      "check_id": "CLAIM_UNLINKED",
+      "message": "WARN: claim 'SYN_CLM_03' has no catalyst link",
+      "repair": "link the claim to a catalyst id in the register, or record why it has no catalyst link",
+      "repair_applied": false,
+      "source": "catalyst",
+      "status": "warn",
+      "subject": "SYN_CLM_03"
+    },
+    {
+      "check_id": "CHECK_FAILED",
+      "message": "WARN: claim 'SYN_CLM_02' links to unknown catalyst 'SYN_CAT_99'",
+      "repair": "repoint the claim's catalyst link to a registered catalyst id, or remove the link",
+      "repair_applied": false,
+      "source": "catalyst",
+      "status": "warn",
+      "subject": "SYN_CLM_02"
+    },
+    {
+      "check_id": "tieout.break",
+      "message": "[block] book_qty=416.0 custodian_qty=666.0 delta=-250.0",
+      "repair": "reconcile the quantity gap named in the message against the booking or custodian record",
+      "repair_applied": false,
+      "source": "portfolio",
+      "status": "fail",
+      "subject": "SYN_A"
+    },
+    {
+      "check_id": "claim_open",
+      "message": "claim status is 'open'",
+      "repair": "finish the claim review and set its status, so the claim is no longer open",
+      "repair_applied": false,
+      "source": "pm_packet",
+      "status": "warn",
+      "subject": "SYN_CL_08"
+    }
+  ]
+}

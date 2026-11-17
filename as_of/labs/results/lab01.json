@@ -1,0 +1,236 @@
+{
+  "checks": [
+    {
+      "check_id": "release.sha256_pinned",
+      "message": "release copy bytes match the pinned hash",
+      "status": "PASS"
+    },
+    {
+      "check_id": "release.copy_matches_authored",
+      "message": "release copy matches the authored table",
+      "status": "PASS"
+    },
+    {
+      "check_id": "release.verifier_after_restore",
+      "message": "release copy reloaded from disk and re-verified after the planted run",
+      "status": "PASS"
+    },
+    {
+      "check_id": "release.reloaded_matches_before",
+      "message": "reloaded release copy hash equals the hash taken before the planted run",
+      "status": "PASS"
+    },
+    {
+      "check_id": "matrix.row_count",
+      "message": "matrix has 8 rows; ids match ROUTE-001 to ROUTE-008",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-001.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, schema, sync, delta",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-001.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-001.surface",
+      "message": "ROUTE-001: chosen CODE matches the rule (native owner CODE, conditions met 5 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-002.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, schema, delta, native",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-002.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-002.surface",
+      "message": "ROUTE-002: chosen DOCS matches the rule (native owner DOCS, conditions met 1 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-003.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, sync, native",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-003.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-003.surface",
+      "message": "ROUTE-003: chosen EXCEL matches the rule (native owner EXCEL, conditions met 1 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-004.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, schema, sync, delta, veto",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-004.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-004.surface",
+      "message": "ROUTE-004: chosen HOLD matches the rule (native owner CODE, conditions met 5 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-005.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, schema, sync, delta",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-005.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-005.surface",
+      "message": "ROUTE-005: chosen CODE matches the rule (native owner CODE, conditions met 5 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-006.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, delta, native",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-006.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-006.surface",
+      "message": "ROUTE-006: chosen SLIDES matches the rule (native owner SLIDES, conditions met 0 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-007.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: rebuild, sync, delta, native",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-007.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-007.surface",
+      "message": "ROUTE-007: chosen DOCS matches the rule (native owner DOCS, conditions met 2 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-008.fields",
+      "message": "fields present; rationale argues every True condition; work-shape terms: repeat, rebuild, schema, sync, delta",
+      "status": "PASS"
+    },
+    {
+      "check_id": "ROUTE-008.reviewer",
+      "message": "reviewer not assigned (placeholder); a named human must read the rationale",
+      "status": "WARN"
+    },
+    {
+      "check_id": "ROUTE-008.surface",
+      "message": "ROUTE-008: chosen CODE matches the rule (native owner CODE, conditions met 5 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.missing_artifact_rejected",
+      "message": "rejected: missing authoritative_artifact; artifact '' does not name a DOCS file",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.missing_rationale_rejected",
+      "message": "rejected: missing rationale; rationale does not argue cond_repeats; rationale does not argue cond_rebuild_old_state; rationale does not argue cond_schema_can_reject; rationale does not argue cond_artifacts_in_sync; rationale does not argue cond_reviewer_needs_delta",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.missing_reviewer_rejected",
+      "message": "rejected: missing reviewer",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.veto_blocks_code",
+      "message": "rejected: ROUTE-004: wrong surface, chosen CODE but the rule gives HOLD (native artifact owner CODE, data_approved 'unknown', conditions met 5 of 5); veto: data_approved is 'unknown', so no Code route is allowed",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.one_condition_not_code",
+      "message": "rejected: ROUTE-001: wrong surface, chosen CODE but the rule gives DOCS (native artifact owner CODE, data_approved 'yes', conditions met 1 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.native_surface_not_in_artifact",
+      "message": "rejected: artifact 'synthetic position memo word-processing draft' does not name a EXCEL file",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.condition_not_argued",
+      "message": "rejected: rationale does not argue cond_schema_can_reject",
+      "status": "PASS"
+    },
+    {
+      "check_id": "negative.control_row_accepted",
+      "message": "untouched ROUTE-001 still passes the surface check",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.wrong_surface_detected",
+      "message": "ROUTE-003: wrong surface, chosen CODE but the rule gives EXCEL (native artifact owner EXCEL, data_approved 'yes', conditions met 1 of 5)",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.failure_isolated_to_route_003",
+      "message": "no other row failed",
+      "status": "PASS"
+    },
+    {
+      "check_id": "planted.release_copy_untouched",
+      "message": "release copy hash unchanged after planted run",
+      "status": "PASS"
+    }
+  ],
+  "completion_record": {
+    "human_review_complete": false,
+    "matrix_path": "/private/tmp/claude-502/-Users-jessieyang/fa2e1450-2bd2-4552-ae50-ca0db2de1b27/scratchpad/cchf/as_of/labs/results/lab01_routing_matrix.json",
+    "matrix_sha256": "3f8d360b383769c92df107661f730eb00cb44e2e58c58ab3e6cb1321d3050af4",
+    "named_example": "ROUTE-003: suggested CODE, chosen EXCEL, because the native workbook owns the artifact even though Code could read a CSV export.",
+    "result": "PASS_STRUCTURE_ONLY_REVIEW_OPEN",
+    "reviewer": "UNASSIGNED. The reviewer field is a placeholder; no human has read the rationales.",
+    "route_changed_after_five_condition_test": [
+      {
+        "chosen_surface": "EXCEL",
+        "native_surface": "EXCEL",
+        "route_id": "ROUTE-003",
+        "suggested_surface": "CODE"
+      },
+      {
+        "chosen_surface": "HOLD",
+        "native_surface": "CODE",
+        "route_id": "ROUTE-004",
+        "suggested_surface": "CODE"
+      }
+    ],
+    "timestamp_utc": "2026-11-17T01:02:36Z"
+  },
+  "lab": "lab01",
+  "limits": [
+    "Matrix, rule and reviewer field are synthetic and authored for this lab.",
+    "The verifier checks structure and the routing rule. It does not establish routing quality.",
+    "Rationales are checked for work-shape terms only. A human reviewer must confirm the work shape."
+  ],
+  "overall": "PASS_STRUCTURE_ONLY_REVIEW_OPEN",
+  "timestamp_utc": "2026-11-17T01:02:36Z",
+  "title": "Route a task by its durable artifact"
+}

@@ -1,0 +1,4 @@
+driver_id,revision_id,ticker,metric,period,analyst_id,driver_name,amount_cents,label
+D001,E004,SYN_T01,eps,2026Q3,SYN_A1,demand_outlook,5,synthetic_judgment
+D002,E004,SYN_T01,eps,2026Q3,SYN_A1,cost_timing,2,synthetic_judgment
+D003,E004,SYN_T01,eps,2026Q3,SYN_A1,share_count_assumption,-2,synthetic_judgment

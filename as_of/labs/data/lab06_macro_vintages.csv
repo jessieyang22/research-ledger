@@ -1,0 +1,12 @@
+series_id,obs_date,vintage_date,value,unit,seasonal_adjustment,source_id,retrieved_at
+SYN_LAB_CPI,2026-02-01,2026-03-09,2.41,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-02-01,2026-04-07,2.38,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-02-01,2026-07-08,2.35,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-03-01,2026-04-08,2.52,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-03-01,2026-05-06,2.49,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-04-01,2026-05-08,2.60,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-04-01,2026-06-05,2.66,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-04-01,2026-07-03,2.71,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-05-01,2026-06-10,2.74,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-05-01,2026-08-07,2.78,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z
+SYN_LAB_CPI,2026-08-01,2026-09-08,2.90,index points (synthetic),SA (synthetic),SYN_LAB_SRC,2026-10-27T00:00:00Z

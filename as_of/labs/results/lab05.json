@@ -1,0 +1,348 @@
+{
+  "canonical_values": {
+    "driver_sum_cents": 5.0,
+    "eps": {
+      "basis_as_of": "2026-10-10T12:00:00Z",
+      "estimate_ids_used": [
+        "E002",
+        "E003",
+        "E004"
+      ],
+      "expected": 1.2166666666666668,
+      "reported": 1.27,
+      "reported_at": "2026-10-20T20:00:00Z",
+      "surprise": 0.05333333333333323,
+      "surprise_pct": 0.043835616438356075,
+      "unit": "usd_per_share"
+    },
+    "gross_margin": {
+      "basis_as_of": "2026-09-02T12:00:00Z",
+      "estimate_ids_used": [
+        "E007",
+        "E008"
+      ],
+      "expected": 40.2,
+      "reported": 41.2,
+      "reported_at": "2026-10-20T20:00:00Z",
+      "surprise": 1.0,
+      "surprise_pct": 0.02487562189054726,
+      "unit": "percent"
+    },
+    "revenue": {
+      "basis_as_of": "2026-09-02T12:00:00Z",
+      "estimate_ids_used": [
+        "E005",
+        "E006"
+      ],
+      "expected": 510.0,
+      "reported": 512.0,
+      "reported_at": "2026-10-20T20:00:00Z",
+      "surprise": 2.0,
+      "surprise_pct": 0.00392156862745098,
+      "unit": "usd_millions"
+    },
+    "revision_cents": 5.000000000000004
+  },
+  "canonical_verifier": {
+    "checks": [
+      {
+        "check_id": "match_keys_unit_period_eps",
+        "detail": "6 estimate rows for SYN_T01/eps/2026Q3; estimate units ['usd_per_share']; report unit usd_per_share",
+        "status": "pass"
+      },
+      {
+        "check_id": "amendment_state_original_eps",
+        "detail": "amendment_state=original",
+        "status": "pass"
+      },
+      {
+        "check_id": "match_keys_unit_period_revenue",
+        "detail": "2 estimate rows for SYN_T01/revenue/2026Q3; estimate units ['usd_millions']; report unit usd_millions",
+        "status": "pass"
+      },
+      {
+        "check_id": "amendment_state_original_revenue",
+        "detail": "amendment_state=original",
+        "status": "pass"
+      },
+      {
+        "check_id": "match_keys_unit_period_gross_margin",
+        "detail": "2 estimate rows for SYN_T01/gross_margin/2026Q3; estimate units ['percent']; report unit percent",
+        "status": "pass"
+      },
+      {
+        "check_id": "amendment_state_original_gross_margin",
+        "detail": "amendment_state=original",
+        "status": "pass"
+      },
+      {
+        "check_id": "baseline_row_unchanged",
+        "detail": "E001 matches all 9 expected fields",
+        "status": "pass"
+      },
+      {
+        "check_id": "revision_is_new_row",
+        "detail": "same series True; knowledge later than baseline True; distinct id True",
+        "status": "pass"
+      },
+      {
+        "check_id": "driver_labels_synthetic",
+        "detail": "3 drivers for E004; labels ['synthetic_judgment']",
+        "status": "pass"
+      },
+      {
+        "check_id": "driver_keys_match_revision",
+        "detail": "driver rows carry the revision's ticker, metric, period and analyst",
+        "status": "pass"
+      },
+      {
+        "check_id": "driver_sum_equals_revision",
+        "detail": "driver sum 5.000000 cents; revision 5.000000 cents (1.25 - 1.20)",
+        "status": "pass"
+      },
+      {
+        "check_id": "no_lookahead_eps",
+        "detail": "latest estimate used 2026-10-10T12:00:00Z; report 2026-10-20T20:00:00Z; post-report rows ['E009', 'E010']; leaked into expected none",
+        "status": "pass"
+      },
+      {
+        "check_id": "post_report_rows_present_eps",
+        "detail": "post-report and boundary rows in the EPS series: ['E009', 'E010'] (expected E009, E010)",
+        "status": "pass"
+      },
+      {
+        "check_id": "eps_expected_uses_revision",
+        "detail": "estimate ids used for EPS expected: E002, E003, E004",
+        "status": "pass"
+      },
+      {
+        "check_id": "no_lookahead_revenue",
+        "detail": "latest estimate used 2026-09-02T12:00:00Z; report 2026-10-20T20:00:00Z; post-report rows none; leaked into expected none",
+        "status": "pass"
+      },
+      {
+        "check_id": "no_lookahead_gross_margin",
+        "detail": "latest estimate used 2026-09-02T12:00:00Z; report 2026-10-20T20:00:00Z; post-report rows none; leaked into expected none",
+        "status": "pass"
+      }
+    ],
+    "passed": true
+  },
+  "checks": [
+    {
+      "check_id": "inputs_written_and_hashed",
+      "detail": "sha256 for estimates.csv, reported.csv, revision_drivers.csv is identical across two writes of the fixture",
+      "status": "pass"
+    },
+    {
+      "check_id": "canonical_verifier_passes",
+      "detail": "16 of 16 verifier checks pass",
+      "status": "pass"
+    },
+    {
+      "check_id": "module_matches_verifier_eps",
+      "detail": "module expected 1.2166666666666668 vs verifier 1.2166666666666668; surprise 0.05333333333333323 vs 0.05333333333333323; pct 0.043835616438356075 vs 0.043835616438356075; basis 2026-10-10 12:00:00+00:00 vs 2026-10-10T12:00:00Z",
+      "status": "pass"
+    },
+    {
+      "check_id": "module_matches_verifier_revenue",
+      "detail": "module expected 510.0 vs verifier 510.0; surprise 2.0 vs 2.0; pct 0.00392156862745098 vs 0.00392156862745098; basis 2026-09-02 12:00:00+00:00 vs 2026-09-02T12:00:00Z",
+      "status": "pass"
+    },
+    {
+      "check_id": "module_matches_verifier_gross_margin",
+      "detail": "module expected 40.2 vs verifier 40.2; surprise 1.0 vs 1.0; pct 0.02487562189054726 vs 0.02487562189054726; basis 2026-09-02 12:00:00+00:00 vs 2026-09-02T12:00:00Z",
+      "status": "pass"
+    },
+    {
+      "check_id": "module_revision_history_two_rows",
+      "detail": "module history for SYN_A1 eps has 2 rows; first (datetime.datetime(2026, 9, 1, 12, 0, tzinfo=datetime.timezone.utc), 1.2), last (datetime.datetime(2026, 10, 10, 12, 0, tzinfo=datetime.timezone.utc), 1.25)",
+      "status": "pass"
+    },
+    {
+      "check_id": "module_crosscheck_all_match",
+      "detail": "4 module comparisons",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_A_detected",
+      "detail": "value expected '1.20' found '1.25'",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_A_repair_restores_pass",
+      "detail": "failed after repair: none",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_B_detected",
+      "detail": "driver sum 0.000000 cents; revision 5.000000 cents (1.25 - 1.20)",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_B_repair_restores_pass",
+      "detail": "failed after repair: none",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_C_detected",
+      "detail": "latest estimate used 2026-10-25T12:00:00Z; report 2026-10-20T20:00:00Z; post-report rows ['E009', 'E010']; leaked into expected ['E009', 'E010']",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_C_repair_restores_pass",
+      "detail": "failed after repair: none",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_D_detected",
+      "detail": "2 estimate rows for SYN_T01/revenue/2026Q3; estimate units ['usd_millions']; report unit usd_thousands",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_D_repair_restores_pass",
+      "detail": "failed after repair: none",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_E_detected",
+      "detail": "amendment_state=amended",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_E_repair_restores_pass",
+      "detail": "failed after repair: none",
+      "status": "pass"
+    },
+    {
+      "check_id": "planted_failures_have_distinct_signatures",
+      "detail": "A_baseline_overwrite -> ['baseline_row_unchanged', 'driver_sum_equals_revision']; B_driver_change -> ['driver_sum_equals_revision']; C_post_report_leak -> ['no_lookahead_eps']; D_unit_mismatch -> ['match_keys_unit_period_revenue']; E_amendment_state -> ['amendment_state_original_gross_margin']",
+      "status": "pass"
+    }
+  ],
+  "input_sha256": {
+    "estimates.csv": "f4f4dbf0a6b8aad702376b3b642789c201fa98b13372e2a5093a0ea80bdc960c",
+    "reported.csv": "8c3df6e8c08043953bcd8520720fb775c92b6bbf470253370717e786ef010d1c",
+    "revision_drivers.csv": "a4587ea429eff1325f0ac3536068b6c23b3af24e5a651e2c6507191a05e3bd3a"
+  },
+  "lab": "lab05_earnings_reconciliation_and_estimate_revision",
+  "limits": [
+    "A PASS shows the fixture is internally consistent and that the verifier and the as_of modules agree.",
+    "It does not show that the fixture matches any filing or release.",
+    "A correct sum for the wrong fiscal quarter still fails the period-match check, within this fixture only.",
+    "Analyst drivers are synthetic judgments, not sourced facts.",
+    "The check list follows this script's own stated procedure.",
+    "This calculation artifact records no recommendation."
+  ],
+  "live_tieout_fields_required": [
+    "entity",
+    "period",
+    "unit",
+    "table",
+    "amendment_state",
+    "retrieval_time"
+  ],
+  "module_values": {
+    "a1_eps_history": [
+      [
+        "2026-09-01T12:00:00Z",
+        1.2
+      ],
+      [
+        "2026-10-10T12:00:00Z",
+        1.25
+      ]
+    ],
+    "eps": {
+      "basis_as_of": "2026-10-10T12:00:00Z",
+      "expected": 1.2166666666666668,
+      "reported": 1.27,
+      "surprise_abs": 0.05333333333333323,
+      "surprise_pct": 0.043835616438356075
+    },
+    "gross_margin": {
+      "basis_as_of": "2026-09-02T12:00:00Z",
+      "expected": 40.2,
+      "reported": 41.2,
+      "surprise_abs": 1.0,
+      "surprise_pct": 0.02487562189054726
+    },
+    "revenue": {
+      "basis_as_of": "2026-09-02T12:00:00Z",
+      "expected": 510.0,
+      "reported": 512.0,
+      "surprise_abs": 2.0,
+      "surprise_pct": 0.00392156862745098
+    }
+  },
+  "overall_pass": true,
+  "planted_failures": [
+    {
+      "detected_by_verifier": true,
+      "detected_detail": "value expected '1.20' found '1.25'",
+      "failed_check_ids": [
+        "baseline_row_unchanged",
+        "driver_sum_equals_revision"
+      ],
+      "injected_change": "estimate E001 value 1.20 replaced with the revised value 1.25 in the disposable copy",
+      "name": "A_baseline_overwrite",
+      "repair": "restore estimates.csv from the canonical source file so E001 holds 1.20; keep E004 as its own row; do not edit the revision to hide the change",
+      "repair_kind": "restore_source_rows",
+      "repaired_failed_check_ids": [],
+      "repaired_passed": true
+    },
+    {
+      "detected_by_verifier": true,
+      "detected_detail": "driver sum 0.000000 cents; revision 5.000000 cents (1.25 - 1.20)",
+      "failed_check_ids": [
+        "driver_sum_equals_revision"
+      ],
+      "injected_change": "driver D001 (demand_outlook) changed from +5 to 0 cents in the disposable copy",
+      "name": "B_driver_change",
+      "repair": "restore D001 to the +5 cents judgment in the canonical driver file; do not add a balancing driver or plug row to force the sum to tie",
+      "repair_kind": "restore_driver_judgment",
+      "repaired_failed_check_ids": [],
+      "repaired_passed": true
+    },
+    {
+      "detected_by_verifier": true,
+      "detected_detail": "latest estimate used 2026-10-25T12:00:00Z; report 2026-10-20T20:00:00Z; post-report rows ['E009', 'E010']; leaked into expected ['E009', 'E010']",
+      "failed_check_ids": [
+        "no_lookahead_eps"
+      ],
+      "injected_change": "verifier run in leaky mode: rows known at or after the EPS report enter the expected value",
+      "name": "C_post_report_leak",
+      "repair": "drop leaky mode; keep the strict knowledge_at < reported_at filter; do not delete E009 or E010 from the fixture to hide them",
+      "repair_kind": "restore_visibility_rule",
+      "repaired_failed_check_ids": [],
+      "repaired_passed": true
+    },
+    {
+      "detected_by_verifier": true,
+      "detected_detail": "2 estimate rows for SYN_T01/revenue/2026Q3; estimate units ['usd_millions']; report unit usd_thousands",
+      "failed_check_ids": [
+        "match_keys_unit_period_revenue"
+      ],
+      "injected_change": "reported revenue row R002 unit changed from usd_millions to usd_thousands",
+      "name": "D_unit_mismatch",
+      "repair": "restore R002 unit to usd_millions from reported.csv; do not rescale the value to hide the unit change",
+      "repair_kind": "restore_reported_row",
+      "repaired_failed_check_ids": [],
+      "repaired_passed": true
+    },
+    {
+      "detected_by_verifier": true,
+      "detected_detail": "amendment_state=amended",
+      "failed_check_ids": [
+        "amendment_state_original_gross_margin"
+      ],
+      "injected_change": "reported gross-margin row R003 amendment_state changed from original to amended",
+      "name": "E_amendment_state",
+      "repair": "restore R003 to the original filing state; any amended figure needs its own tie-out, not a silent swap",
+      "repair_kind": "restore_reported_row",
+      "repaired_failed_check_ids": [],
+      "repaired_passed": true
+    }
+  ],
+  "synthetic_data_only": true
+}

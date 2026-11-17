@@ -1,0 +1,34 @@
+{
+  "allowed_tools": [
+    "verifier",
+    "queue_write"
+  ],
+  "allowed_writes": [
+    "as_of/labs/results/lab10_queue"
+  ],
+  "failure_conditions": [
+    "late",
+    "overlapping",
+    "partial_input"
+  ],
+  "folder": "as_of/labs/data/lab10_sample_folder",
+  "instructions": "Run the lab10 verifier on the folder named above. If every required input is present and the run is on time and does not overlap an earlier run, write REVIEW_REQUIRED to the queue file. If the run is late, overlaps an earlier run, or any required input is missing, write FAILED to the queue file. Write nothing else. Do not use the network. Do not change settings or schedules.",
+  "mode": "Manual",
+  "outcome_labels": {
+    "failure": "FAILED",
+    "success": "REVIEW_REQUIRED"
+  },
+  "paused": true,
+  "required_inputs": [
+    "synthetic_positions.csv",
+    "synthetic_prices.csv"
+  ],
+  "schedule": {
+    "business_days_only": true,
+    "cadence": "daily",
+    "due_time": "16:05",
+    "grace_minutes": 10,
+    "name": "lab10_daily_close"
+  },
+  "task_name": "lab10 synthetic close review"
+}
